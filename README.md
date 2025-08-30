@@ -1,130 +1,98 @@
-# CloudNasManager v2.
+# ☁️ CloudNasManager
 
-![Logo Imagen](https://github.com/jearseco/CloudNasManager/blob/63290920a5e83640457396933a5c29289b3cbfd9/Imagesl/extension_icon%40512px%20(1).png)
+![GitHub release (latest)](https://img.shields.io/github/v/release/jearseco/CloudNasManager?style=for-the-badge)  
+![GitHub repo size](https://img.shields.io/github/repo-size/jearseco/CloudNasManager?style=for-the-badge)  
+![GitHub stars](https://img.shields.io/github/stars/jearseco/CloudNasManager?style=for-the-badge)  
+![GitHub issues](https://img.shields.io/github/issues/jearseco/CloudNasManager?style=for-the-badge)  
+![GitHub license](https://img.shields.io/github/license/jearseco/CloudNasManager?style=for-the-badge)
 
-# Cloud NAS Manager v2.0 - Lista de Características
+---
 
-## Versión: 2.0
+## 📌 Descripción
 
-## Autor: Jose Barragan & Josip Polo
+**CloudNasManager** es una herramienta portable para **automatizar copias de seguridad** desde un directorio local hacia un destino en red (NAS/Servidor).  
+Optimiza el respaldo copiando solo los archivos modificados y manteniendo la estructura original de carpetas.  
 
-Fecha: 30 de Agosto de 2025
+✅ **Características principales:**
+- Copias automáticas cada cierto tiempo.  
+- Soporte para destinos en red con autenticación (SMB).  
+- Validación de rutas y permisos antes de ejecutar la copia.  
+- Interfaz de mensajes claros para usuarios.  
+- Configuración del destino disponible desde la v1.1.  
 
-## Demo
+---
 
-Insert gif or link to demo
+## ⚙️ Requisitos
 
+- **Sistema:** Windows 10/11 (x64).  
+- **Permisos:** lectura en la carpeta origen y escritura en el destino.  
+- **Red (NAS):**
+  - Acceso SMB habilitado.  
+  - Credenciales válidas si no permite acceso como invitado.  
+  - Posible mapeo previo con `net use` si tu entorno lo requiere.  
+- **Espacio:** suficiente en el destino para respaldos.  
 
-## Features
+---
 
-Cloud NAS Manager es una aplicación de escritorio diseñada para simplificar la administración y automatización de copias de seguridad en múltiples servidores NAS locales (como TrueNAS) dentro de una red.
-## 1. Detección y Gestión de Servidores
-Búsqueda Automática en la Red:
+## 🧩 Notas técnicas
 
- - La aplicación escanea la red local para detectar automáticamente todos los servidores NAS que responden a las credenciales configuradas.
+- Copia la **estructura completa de directorios**.  
+- Solo reemplaza archivos cambiados (ahorra tiempo/E/S).  
+- Intervalo de copia fijo: **30 min** (configurable en futuras versiones).  
 
- - Utiliza un escaneo de puertos rápido y eficiente para minimizar los tiempos de espera.
+---
 
- - Sistema de Caché Inteligente:
+## 🚀 Instalación
 
- - Guarda la lista de servidores encontrados en un archivo local. Esto permite que la aplicación se inicie de forma casi instantánea en usos posteriores.
+1. Descarga la última versión desde [Releases](../../releases).  
+2. Extrae el contenido del `.zip`.  
+3. Ejecuta **CloudNasManager.exe** (portable, no requiere instalación).  
 
- - Incluye un botón para "Volver a Escanear la Red" que fuerza una nueva búsqueda, ideal para cuando se añaden nuevos servidores.
+---
 
-## 1.2 Configuración Remota de Servidores:
+## 🏳️ Flags (argumentos CLI)
 
- - Si se detecta un servidor accesible pero que no ha sido configurado, la aplicación lo marca como "No Configurado".
-
- - Permite al usuario asignar un nombre al servidor directamente desde la interfaz. La aplicación se conecta remotamente y crea los archivos de configuración (config.txt, backup.txt) necesarios, dejando el servidor listo para ser administrado.
-
-## 1.3 Visualización Clara de Estados:
-
- - La lista principal muestra cada servidor con un estado visual claro:
-
- - Configurado (Verde): Servidor en línea y listo para administrar.
-
- - No Configurado (Naranja): Servidor en línea pero requiere configuración inicial.
-
- - Error de Conexión (Rojo): Servidor encontrado en el caché pero actualmente inaccesible.
-
-## 2. Panel de Administración de NAS
-Una vez que se selecciona un servidor configurado, se abre un potente panel de administración dedicado con las siguientes funciones:
-Interfaz Multi-Panel Moderna:
-
- - Una ventana de gestión centralizada con un menú de navegación lateral que permite cambiar entre diferentes vistas ("Inicio", "Lista de Directorios") de forma fluida y sin abrir nuevas ventanas.
-
-## 2.1 Panel de "Inicio" (Dashboard Principal):
-
- - Muestra la información clave del servidor: Nombre, Dirección IP y Estado.
-
- - Ofrece un resumen de solo lectura de todas las tareas de respaldo activas e inactivas.
-
- - Incluye un botón para "REALIZAR COPIA AHORA", que ejecuta un respaldo manual inmediato de todas las carpetas activas.
-
-## 2.3 Panel "Lista de Directorios" (Gestor de Tareas de Backup):
-
- - Es el centro de control para las copias de seguridad. Permite:
-
- - Agregar y Eliminar Tareas: Seleccionar carpetas locales para añadir a la cola de respaldo o eliminarlas.
-
- - Activar y Desactivar Tareas: Pausar una tarea de respaldo sin necesidad de borrarla.
-
-## Configuración Centralizada: 
-
-La lista de directorios se guarda en el archivo backup.txt directamente en el servidor NAS, asegurando que la configuración sea consistente desde cualquier PC que ejecute la aplicación.
-
-## 3. Sistema de Copias de Seguridad (Backups)
-Backups Manuales y Automáticos:
-
-El sistema soporta tanto copias de seguridad manuales (iniciadas con un clic) como automáticas (programadas).
-
-## 3.1 Programación de Backups Automáticos:
-
- - Permite configurar un intervalo de tiempo para que las copias de seguridad se realicen de forma automática en segundo plano.
-
- - Las opciones de intervalo son configurables (ej: 1 Minuto para pruebas, 10, 20, 30 min, 1 Hora).
-
-## 3.2 Proceso en Segundo Plano (Multihilo):
-
- - Las copias de seguridad automáticas se ejecutan en un hilo de procesamiento separado. Esto garantiza que la interfaz de la aplicación nunca se congele y permanezca siempre fluida y receptiva, incluso durante copias de archivos grandes.
-
- - Se puede Iniciar y Detener el servicio de backup automático en cualquier momento.
-
-## 3.3 Estructura de Carpetas Organizada:
-
-Cada copia de seguridad se guarda en el servidor NAS dentro de una estructura de carpetas ordenada, que incluye el nombre de la carpeta original y la fecha y hora exactas del respaldo, facilitando la restauración de versiones anteriores.
+Puedes lanzar el programa con las siguientes opciones:  
 
 ```bash
-\\IP_DEL_SERVIDOR\DatosPrincipales\Respaldos\[NombreCarpetaOriginal]\[Año-Mes-Día_Hora-Min-Seg]
+CloudNasManager.exe --help        # Muestra ayuda de comandos
+CloudNasManager.exe --src <ruta>  # Define carpeta origen
+CloudNasManager.exe --dst <ruta>  # Define carpeta destino
+CloudNasManager.exe --interval 15 # Define intervalo (minutos)
+CloudNasManager.exe --log         # Habilita registro detallado en log.txt
+
 ```
+---
+## 🧾 Changelog
 
-## 4. Tecnología y Fiabilidad
-Conectividad Robusta con Windows:
+Consulta el historial completo en [CHANGELOG.md](./Old-Version/README.md):
 
- - Utiliza el sistema nativo de mapeo de unidades de red de Windows (net use) para todas las operaciones de archivos. Esto elimina la dependencia de librerías externas complejas y garantiza una compatibilidad y fiabilidad máximas.
+- **v1.0:** lanzamiento inicial (destino fijo, intervalos cada 30 min).  
+- **v1.1:** destino configurable, mensajes mejorados y validaciones.
 
-Arquitectura Centralizada:
+---
 
- - Toda la configuración crítica ```(nombres de servidor, listas de directorios)``` se almacena en los propios servidores NAS, no en la computadora del usuario.
+## 📄 Información
 
+- **Nombre:** CloudNasManager  
+- **Versión:** 1.1  
+- **Formato:** `.exe` (portable)  
+- **Tecnología de build:** PyInstaller  
+- **Licencia:** Custom/Propietaria (ajústala si usas otra)  
 
+---
 
-## Installation
+## 👤 Desarrollador
 
-Install my-project with npm
+**NRC Originals Enterprise**  
+Desarrollado por *José Barragán (Jearse)*  
 
-```bash
-  npm install my-project
-  cd my-project
-```
+---
 
-## Related
+## ⭐ Contribución y soporte
 
-Here are some related projects
+Si tienes sugerencias, reportes de errores o mejoras:  
+1. Abre un **Issue** en este repositorio.  
+2. Propón un **Pull Request** con tus cambios.  
 
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-
-## Authors
-
-- [@octokatherine](https://www.github.com/jearseco)
+#💡 ¡Tu feedback ayuda a mejorar CloudNasManager!
