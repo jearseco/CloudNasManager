@@ -65,7 +65,7 @@ CloudNasManager.exe --log         # Habilita registro detallado en log.txt
 ---
 ## 🧾 Changelog
 
-Consulta el historial completo en [CHANGELOG.md](./Old-Version/README.md):
+Consulta el historial completo en [CHANGELOG.md](./Old%20Version/README.md):
 
 - **v1.0:** lanzamiento inicial (destino fijo, intervalos cada 30 min).  
 - **v1.1:** destino configurable, mensajes mejorados y validaciones.
