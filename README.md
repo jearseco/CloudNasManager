@@ -53,7 +53,7 @@ Interfaz Multi-Panel Moderna:
 
  - Una ventana de gestión centralizada con un menú de navegación lateral que permite cambiar entre diferentes vistas ("Inicio", "Lista de Directorios") de forma fluida y sin abrir nuevas ventanas.
 
-## 3.1Panel de "Inicio" (Dashboard Principal):
+## 2.1 Panel de "Inicio" (Dashboard Principal):
 
  - Muestra la información clave del servidor: Nombre, Dirección IP y Estado.
 
@@ -61,7 +61,7 @@ Interfaz Multi-Panel Moderna:
 
  - Incluye un botón para "REALIZAR COPIA AHORA", que ejecuta un respaldo manual inmediato de todas las carpetas activas.
 
-## 3.2 Panel "Lista de Directorios" (Gestor de Tareas de Backup):
+## 2.3 Panel "Lista de Directorios" (Gestor de Tareas de Backup):
 
  - Es el centro de control para las copias de seguridad. Permite:
 
