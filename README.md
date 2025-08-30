@@ -35,4 +35,4 @@ Here are some related projects
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)
+- [@octokatherine](https://www.github.com/jearseco)
