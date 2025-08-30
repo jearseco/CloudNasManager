@@ -1,6 +1,6 @@
 # CloudNasManager
 
-![Logo Imagen](https://github.com/jearseco/CloudNasManager/blob/ca4b9e08fa946dc61e987b8481ab050c6f2c6a40/Imagesl/extension_icon%402048px%20(1).png))
+![Logo Imagen](https://github.com/jearseco/CloudNasManager/blob/63290920a5e83640457396933a5c29289b3cbfd9/Imagesl/extension_icon%40512px%20(1).png))
 A brief description of what this project does and who it's for
 
 
