@@ -49,6 +49,7 @@ cloudnasmanager.exe --scan        # Escanea servidores NAS disponibles
 cloudnasmanager.exe --connect     # Conecta a un NAS especificando IP/host
 cloudnasmanager.exe --ui          # Inicia el programa en modo gráfico
 cloudnasmanager.exe --reset       # Restablece configuración
+```
 ---
 
 ## 🛠️ Solución de Problemas
