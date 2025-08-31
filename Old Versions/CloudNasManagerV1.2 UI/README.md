@@ -67,15 +67,15 @@ cloudnasmanager.exe --reset       # Restablece configuración
 
 ## ℹ️ Información
 
-📌 *Nombre del proyecto:* CloudNasManager
+📌 **Nombre del proyecto:** CloudNasManager
 
-🧩 *Versión:* 1.2 (UI)
+🧩 **Versión:** 1.2 (UI)
 
-📜 *Licencia:* Propietaria
+📜 **Licencia:** Propietaria
 
-🏢 *Desarrollado por:* NRC Originals Enterprise
+🏢 **Desarrollado por:** NRC Originals Enterprise
 
-✍️ *Autor:* Jearse
+✍️ **Autor:** Jearse
 
 ## 📄 Notas
 Este software está protegido bajo licencia propietaria. No se permite su distribución, copia o modificación sin autorización expresa de NRC Originals Enterprise.
@@ -83,4 +83,5 @@ Este software está protegido bajo licencia propietaria. No se permite su distri
 ---
 
 ✍️ **Desarrollado por NRC Originals Enterprise by Jearse**  
+
 
