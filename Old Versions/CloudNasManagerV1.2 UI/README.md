@@ -52,14 +52,30 @@ cloudnasmanager.exe --reset       # Restablece configuración
 ```
 ---
 
-## 🛠️ Solución de Problemas
-Si experimentas errores:  
-1. Asegúrate de estar ejecutando el programa en **Windows 10/11 (64 bits)**.  
-2. Comprueba que tienes permisos de administrador si el programa no guarda las IP.  
-3. Si el `.exe` no abre, intenta reinstalar las librerías de **Microsoft Visual C++ Redistributable**.  
-4. Verifica que el servidor NAS esté en línea y accesible en tu red local.  
+
+## 🔧 Solución de problemas comunes
+
+❌ Error de conexión al servidor NAS → Verifique la IP y que el servidor esté encendido.
+
+❌ Problema con credenciales → Asegúrese de borrar las credenciales guardadas y vuelva a ingresarlas.
+
+❌ El .exe no abre → Ejecute como administrador o desactive temporalmente el antivirus.
+
+❌ UI no carga → Revise que tenga instaladas las librerías gráficas incluidas.
 
 ---
+
+## ℹ️ Información
+
+📌 Nombre del proyecto: CloudNasManager
+
+🧩 Versión: 1.2 (UI)
+
+📜 Licencia: Propietaria
+
+🏢 Desarrollado por: NRC Originals Enterprise
+
+✍️ Autor: Jearse
 
 ## 📄 Notas
 Este software está protegido bajo licencia propietaria. No se permite su distribución, copia o modificación sin autorización expresa de NRC Originals Enterprise.
