@@ -1,40 +1,54 @@
-# CloudNasManager V1.2 UI
+# ☁️ CloudNasManager V1.2 UI  
 
-**CloudNasManager** es una herramienta con interfaz gráfica diseñada para gestionar conexiones a servidores NAS de manera rápida y sencilla.  
-Ahora incluye mejoras en la experiencia de usuario y nuevas funcionalidades empaquetadas en un único archivo ejecutable (`.exe`) para mayor comodidad.
-
----
-
-## 📌 Información General
-- **Versión:** V1.2  
-- **Nombre del Software:** CloudNasManager  
-- **Licencia:** Propietaria  
-- **Desarrollado por:** NRC Originals Enterprise by Jearse  
+[![Version](https://img.shields.io/badge/version-1.2-blue.svg?style=for-the-badge&logo=github)](https://github.com/)  
+[![Build](https://img.shields.io/badge/build-.exe-success?style=for-the-badge&logo=windows)](https://github.com/)  
+[![License](https://img.shields.io/badge/license-Propietaria-red.svg?style=for-the-badge&logo=key)](LICENSE)  
+[![Status](https://img.shields.io/badge/status-Stable-green.svg?style=for-the-badge&logo=rocket)](https://github.com/)  
 
 ---
 
-## 🚀 Nuevos Features
-- Interfaz gráfica intuitiva para una mejor experiencia de usuario.  
-- Solicitud automática de la dirección IP del servidor al iniciar el programa.  
-- Posibilidad de agregar la IP ingresada directamente a la lista de servidores.  
-- Ejecución simplificada en un archivo único `.exe` (sin necesidad de instalación adicional).  
+## 🚀 Descripción
+**CloudNasManager V1.2 UI** es una herramienta diseñada para la administración y gestión de servidores **NAS en la nube**, ahora con **interfaz gráfica (UI)** y empaquetada en un ejecutable `.exe` para mayor comodidad y portabilidad.  
+
+Con esta versión, se facilita la experiencia del usuario al integrar paneles visuales, opciones rápidas y accesibles, así como nuevas funciones para la seguridad y la conectividad.  
 
 ---
 
-## ⚙️ Requerimientos
-Para ejecutar **CloudNasManager V1.2 UI** necesitas:  
-- **Sistema operativo:** Windows 10 o superior.  
-- **Arquitectura:** 64 bits.  
-- **Dependencias:** Incluidas en el empaquetado `.exe`, no requiere instalación manual de librerías.  
+## 🆕 Novedades en la versión 1.2  
+- ✅ Interfaz gráfica de usuario (UI) moderna y sencilla.  
+- ✅ Empaque en **.exe** para instalación rápida en Windows.  
+- ✅ Nuevas **flags de configuración** en la línea de comandos.  
+- ✅ Correcciones de bugs de la versión 1.1.  
+- ✅ Mejor compatibilidad con redes NAS distribuidas.  
 
 ---
 
-## 🖥️ Interfaz Gráfica
-La nueva **UI (User Interface)** permite:  
-- Ingresar fácilmente la IP del servidor NAS.  
-- Visualizar y administrar las conexiones guardadas.  
-- Mayor estabilidad y rendimiento frente a versiones anteriores.  
+## 🎨 Interfaz gráfica  
+La UI incluye:  
+- 📂 Visualizar y administrar las conexiones guardadas.  
+- 🔑 Ingresar fácilmente la IP del servidor NAS 
+- 📊 Mayor estabilidad y rendimiento frente a versiones anteriores.  
 
+---
+
+## 📋 Requerimientos del sistema  
+- 💻 **Sistema operativo:** Windows 10/11 (x64).  
+- 🖥️ **RAM mínima:** 2 GB.  
+- 💾 **Espacio en disco:** 200 MB libres.  
+- 🌐 **Conexión de red:** necesaria para NAS.  
+- ⚙️ **Dependencias:** incluidas en el instalador `.exe`.  
+
+---
+
+## 🛠️ Flags de uso en CLI
+Si prefieres usar **línea de comandos**, estas son algunas de las nuevas flags:  
+
+```bash
+cloudnasmanager.exe --help        # Muestra ayuda
+cloudnasmanager.exe --scan        # Escanea servidores NAS disponibles
+cloudnasmanager.exe --connect     # Conecta a un NAS especificando IP/host
+cloudnasmanager.exe --ui          # Inicia el programa en modo gráfico
+cloudnasmanager.exe --reset       # Restablece configuración
 ---
 
 ## 🛠️ Solución de Problemas
