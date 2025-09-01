@@ -62,7 +62,7 @@ Permite agregar múltiples servidores/IP y muestra el estado de conexión en tie
 Este proyecto es **propietario**, pero se aceptan sugerencias de mejoras y reportes de errores a través de:  
 
 - 📧 **Soporte:** support@nrcoriginals.com  
-- 📝 **Issues de GitHub:** [Repositorio oficial](https://github.com/NRC-Originals/CloudNasManager)  
+- 📝 **Issues de GitHub:** [Repositorio oficial](https://github.com/jearseco/CloudNasManager)  
 - 🔧 **Pull Requests:** No disponibles (proyecto cerrado).  
 
 ---
