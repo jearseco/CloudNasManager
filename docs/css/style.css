@@ -1,72 +1,74 @@
-/* Estilos generales del cuerpo de la página */
+/* Estilos generales */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2rem 0;
     margin: 0;
     text-align: center;
 }
 
-/* Contenedor principal */
 .container {
+    max-width: 800px;
+    width: 90%;
     padding: 40px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo del logo */
-/* --- NUEVO ESTILO PARA EL LOGO EN PÁGINAS DE APP --- */
 .app-page-logo {
-    max-height: 90px; /* Tamaño del logo principal de la aplicación */
+    max-height: 90px;
     width: auto;
     margin-bottom: 25px;
 }
+h1 { color: #333; margin-bottom: 10px; }
+p { color: #666; margin-bottom: 30px; }
 
-.logo {
-    max-width: 100px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-/* --- ESTILOS DEL CARRUSEL --- */
+/* --- ESTILOS DEL CARRUSEL (CORREGIDOS) --- */
 .carousel {
     position: relative;
     width: 100%;
     margin-bottom: 40px;
+    /* Añadido: Altura fija o mínima para el carrusel para evitar que se colapse */
+    min-height: 400px; /* Ajusta esta altura según el tamaño deseado para tus videos/imágenes */
+    display: flex; /* Añadido para mejor control del viewport */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
 }
 
 .carousel-viewport {
     overflow: hidden;
     border-radius: 8px;
+    width: 100%; /* Asegura que el viewport ocupe todo el ancho disponible */
+    height: 100%; /* Asegura que el viewport ocupe toda la altura del carousel */
+    position: absolute; /* Para que los botones puedan posicionarse encima */
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 100%; /* Asegura que el track ocupe toda la altura */
 }
 
 .carousel-slide {
     flex: 0 0 100%;
     min-width: 100%;
+    height: 100%; /* Asegura que cada slide ocupe toda la altura */
+    display: flex; /* Para centrar la imagen/video dentro del slide */
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Fondo negro para videos o si las imágenes no cubren todo */
 }
 
 .carousel-slide img,
 .carousel-slide video {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Asegura que no se desborden */
+    max-height: 100%; /* Asegura que no se desborden y mantengan la proporción */
+    object-fit: contain; /* << IMPORTANTE: Asegura que el contenido se ajuste sin cortarse */
     display: block;
 }
 
@@ -82,21 +84,25 @@ p {
     cursor: pointer;
     font-size: 20px;
     z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-button.prev { left: 10px; }
 .carousel-button.next { right: 10px; }
 .carousel-button:hover { background-color: rgba(0, 0, 0, 0.8); }
 
-/* --- Estilos del Botón y sus Animaciones (CORREGIDO) --- */
-
-/* Estado inicial del botón */
+/* --- ESTILOS DEL BOTÓN DE DESCARGA (SIN CAMBIOS, SOLO PARA CONTEXTO) --- */
+.download-button:not(.clicked):hover {
+    background-image: linear-gradient(45deg, #007bff, #0056b3);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+}
 .download-button {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Añade un espacio entre el icono y el texto */
+    gap: 10px;
     background-color: #007bff;
     color: #ffffff;
     padding: 15px 30px;
@@ -109,31 +115,17 @@ p {
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-
-/* Icono de descarga */
 .download-button .button-icon {
     display: flex;
     align-items: center;
     transition: transform 0.4s ease-in-out;
 }
-
-/* Texto del botón */
 .download-button .button-text {
     transition: all 0.3s ease-in-out;
 }
-
-/* --- Efecto al pasar el cursor (Hover) --- */
-.download-button:not(.clicked):hover {
-    background-image: linear-gradient(45deg, #007bff, #0056b3);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-    transform: translateY(-3px);
-} 
-
 .download-button:hover .button-icon {
     transform: scale(1.1);
 }
-
-/* --- Animación al hacer Clic --- */
 .download-button.clicked {
     width: 60px;
     height: 60px;
@@ -142,14 +134,11 @@ p {
     background-color: #28a745;
     gap: 0;
 }
-
 .download-button.clicked .button-text,
 .download-button.clicked .button-icon {
     opacity: 0;
     width: 0;
 }
-
-/* Creación del checkmark (chulito) con CSS */
 .download-button::after {
     content: '';
     position: absolute;
@@ -163,7 +152,6 @@ p {
     opacity: 0;
     transition: opacity 0.3s ease-in-out 0.3s;
 }
-
 .download-button.clicked::after {
     opacity: 1;
 }
