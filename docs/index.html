@@ -3,59 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniConnect - Descargar</title>
-    <style>
-        /* Estilos básicos para que se vea bien */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            padding: 40px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .download-button {
-            display: inline-block;
-            background-color: #007bff; /* Color azul primario */
-            color: #ffffff;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .download-button:hover {
-            background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
-        }
-    </style>
+    <title>Cloud NAS Manager - Descargar</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Bienvenido a UniConnect</h1>
-        <p>Haz clic en el botón de abajo para descargar la última versión de nuestro programa.</p>
+        <img src="logo.png" alt="Logo de Cloud NAS Manager" class="logo">
+
+        <h1>Bienvenido a CloudNasManger</h1>
+        <p>Haz clic en el botón de abajo para descargar la última versión.</p>
         
-        <a href="https://github.com/nrcoriginalsco/CloudNasManager/releases/latest/download/CloudNasManagerLastversion.exe" class="download-button" download>
-            Descargar UniConnect
+        <a href="https://github.com/nrcoriginalsco/CloudNasManager/releases/latest/download/CloudNasManagerLastversion.exe" class="download-button" id="downloadBtn">
+            <span class="button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
+            <span class="button-text">Descargar</span>
         </a>
     </div>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
