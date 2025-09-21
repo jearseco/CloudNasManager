@@ -1,36 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Selecciona el botón por su ID
+    // --- LÓGICA DEL CARRUSEL ---
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-button.next');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        let currentIndex = 0;
+
+        // Organiza los slides uno al lado del otro
+        const setSlidePosition = (slide, index) => {
+            slide.style.left = slideWidth * index + 'px';
+        };
+        // slides.forEach(setSlidePosition); // No es necesario con Flexbox
+
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+            currentSlide.classList.remove('current-slide');
+            targetSlide.classList.add('current-slide');
+        };
+
+        const updateSlide = (newIndex) => {
+            const currentSlide = slides[currentIndex];
+            const targetSlide = slides[newIndex];
+            track.style.transform = `translateX(-${100 * newIndex}%)`;
+            currentIndex = newIndex;
+        };
+
+        // Click en botón de siguiente
+        nextButton.addEventListener('click', e => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= slides.length) newIndex = 0; // Vuelve al inicio
+            updateSlide(newIndex);
+        });
+
+        // Click en botón de anterior
+        prevButton.addEventListener('click', e => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = slides.length - 1; // Va al final
+            updateSlide(newIndex);
+        });
+    }
+
+    // --- LÓGICA DEL BOTÓN DE DESCARGA ---
     const downloadBtn = document.getElementById('downloadBtn');
-
-    // Añade un "escuchador" para el evento 'click'
-    downloadBtn.addEventListener('click', function(event) {
-        
-        // 1. Previene la descarga inmediata para poder mostrar la animación
-        event.preventDefault();
-
-        // Si el botón ya está en estado de 'clic', no hagas nada más
-        if (this.classList.contains('clicked')) {
-            return;
-        }
-
-        // 2. Guarda la URL de descarga que está en el botón
-        const downloadUrl = this.href;
-
-        // 3. Añade la clase 'clicked' al botón para iniciar la animación CSS
-        this.classList.add('clicked');
-
-        // 4. Espera 2 segundos (2000 milisegundos) para que la animación termine
-        setTimeout(function() {
-            
-            // 5. Inicia la descarga del archivo
-            window.location.href = downloadUrl;
-
-            // 6. Resetea el botón a su estado original después de otros 2 segundos
-            setTimeout(function() {
-                downloadBtn.classList.remove('clicked');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (this.classList.contains('clicked')) return;
+            const downloadUrl = this.href;
+            this.classList.add('clicked');
+            setTimeout(() => {
+                window.location.href = downloadUrl;
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 2000);
             }, 2000);
-
-        }, 2000);
-    });
+        });
+    }
 });

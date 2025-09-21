@@ -41,6 +41,53 @@ p {
     margin-bottom: 30px;
 }
 
+/* --- ESTILOS DEL CARRUSEL --- */
+.carousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+.carousel-button:hover { background-color: rgba(0, 0, 0, 0.8); }
+
 /* --- Estilos del Botón y sus Animaciones (CORREGIDO) --- */
 
 /* Estado inicial del botón */
