@@ -42,7 +42,7 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* << CAMBIO AQUÍ: Añade un espacio entre el icono y el texto */
+    gap: 10px; /* Añade un espacio entre el icono y el texto */
     background-color: #007bff;
     color: #ffffff;
     padding: 15px 30px;
@@ -56,11 +56,11 @@ p {
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-/* Icono de descarga (ahora siempre visible) */
+/* Icono de descarga */
 .download-button .button-icon {
     display: flex;
     align-items: center;
-    transition: transform 0.4s ease-in-out; /* << CAMBIO AQUÍ: Simplificamos la transición */
+    transition: transform 0.4s ease-in-out;
 }
 
 /* Texto del botón */
@@ -72,21 +72,21 @@ p {
 .download-button:hover {
     background-image: linear-gradient(45deg, #007bff, #0056b3);
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    transform: translateY(-3px);
 }
 
 .download-button:hover .button-icon {
-    transform: scale(1.1); /* El icono se agranda un poco */
+    transform: scale(1.1);
 }
 
 /* --- Animación al hacer Clic --- */
 .download-button.clicked {
     width: 60px;
     height: 60px;
-    padding: 0; /* << CAMBIO AQUÍ: Quitamos el padding en el estado de círculo */
+    padding: 0;
     border-radius: 50%;
     background-color: #28a745;
-    gap: 0; /* << CAMBIO AQUÍ: Quitamos el gap */
+    gap: 0;
 }
 
 .download-button.clicked .button-text,
@@ -99,22 +99,17 @@ p {
 .download-button::after {
     content: '';
     position: absolute;
-    
-    /* === LA CORRECCIÓN MÁS IMPORTANTE ESTÁ AQUÍ === */
-    /* Usamos transform para un centrado perfecto */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%) rotate(45deg); /* Centra y ajusta verticalmente */
-
-    width: 12px;  /* Ajustamos el tamaño del chulito */
-    height: 24px; /* Ajustamos el tamaño del chulito */
+    transform: translate(-50%, -60%) rotate(45deg);
+    width: 12px;
+    height: 24px;
     border: solid #fff;
     border-width: 0 4px 4px 0;
     opacity: 0;
     transition: opacity 0.3s ease-in-out 0.3s;
 }
 
-/* El checkmark se hace visible cuando el botón tiene la clase .clicked */
 .download-button.clicked::after {
     opacity: 1;
 }

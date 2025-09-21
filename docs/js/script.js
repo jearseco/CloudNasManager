@@ -1,4 +1,3 @@
-// Espera a que todo el contenido de la página se cargue
 document.addEventListener('DOMContentLoaded', function() {
 
     // Selecciona el botón por su ID
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 5. Inicia la descarga del archivo
             window.location.href = downloadUrl;
 
-            // 6. (Opcional) Resetea el botón a su estado original después de otros 2 segundos
+            // 6. Resetea el botón a su estado original después de otros 2 segundos
             setTimeout(function() {
                 downloadBtn.classList.remove('clicked');
             }, 2000);
