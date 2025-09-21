@@ -19,6 +19,13 @@ body {
 }
 
 /* Estilo del logo */
+/* --- NUEVO ESTILO PARA EL LOGO EN PÁGINAS DE APP --- */
+.app-page-logo {
+    max-height: 90px; /* Tamaño del logo principal de la aplicación */
+    width: auto;
+    margin-bottom: 25px;
+}
+
 .logo {
     max-width: 100px;
     margin-bottom: 20px;
