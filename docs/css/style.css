@@ -20,7 +20,7 @@ body {
 
 /* Estilo del logo */
 .logo {
-    max-width: 100px; /* Ajusta el tamaño según tu logo */
+    max-width: 100px;
     margin-bottom: 20px;
 }
 
@@ -34,14 +34,15 @@ p {
     margin-bottom: 30px;
 }
 
-/* --- Estilos del Botón y sus Animaciones --- */
+/* --- Estilos del Botón y sus Animaciones (CORREGIDO) --- */
 
 /* Estado inicial del botón */
 .download-button {
-    position: relative; /* Necesario para posicionar el checkmark después */
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px; /* << CAMBIO AQUÍ: Añade un espacio entre el icono y el texto */
     background-color: #007bff;
     color: #ffffff;
     padding: 15px 30px;
@@ -51,17 +52,15 @@ p {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    overflow: hidden; /* Oculta lo que se salga del botón */
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave para todo */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-/* Icono de descarga (inicialmente oculto) */
+/* Icono de descarga (ahora siempre visible) */
 .download-button .button-icon {
     display: flex;
     align-items: center;
-    width: 0;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out; /* << CAMBIO AQUÍ: Simplificamos la transición */
 }
 
 /* Texto del botón */
@@ -73,29 +72,23 @@ p {
 .download-button:hover {
     background-image: linear-gradient(45deg, #007bff, #0056b3);
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-}
-
-/* Al pasar el cursor, el texto se mueve y el icono aparece */
-.download-button:hover .button-text {
-    transform: translateX(-10px);
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
 }
 
 .download-button:hover .button-icon {
-    width: 24px; /* Ancho del SVG */
-    opacity: 1;
-    transform: translateX(5px);
+    transform: scale(1.1); /* El icono se agranda un poco */
 }
 
 /* --- Animación al hacer Clic --- */
-/* Clase que se añade con JavaScript */
 .download-button.clicked {
-    width: 60px;  /* Se convierte en un círculo */
+    width: 60px;
     height: 60px;
+    padding: 0; /* << CAMBIO AQUÍ: Quitamos el padding en el estado de círculo */
     border-radius: 50%;
-    background-color: #28a745; /* Verde de éxito */
+    background-color: #28a745;
+    gap: 0; /* << CAMBIO AQUÍ: Quitamos el gap */
 }
 
-/* Al hacer clic, el texto y el icono desaparecen */
 .download-button.clicked .button-text,
 .download-button.clicked .button-icon {
     opacity: 0;
@@ -106,15 +99,19 @@ p {
 .download-button::after {
     content: '';
     position: absolute;
-    top: 25%;
-    left: 38%;
-    width: 10px;
-    height: 20px;
+    
+    /* === LA CORRECCIÓN MÁS IMPORTANTE ESTÁ AQUÍ === */
+    /* Usamos transform para un centrado perfecto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg); /* Centra y ajusta verticalmente */
+
+    width: 12px;  /* Ajustamos el tamaño del chulito */
+    height: 24px; /* Ajustamos el tamaño del chulito */
     border: solid #fff;
     border-width: 0 4px 4px 0;
-    transform: rotate(45deg);
     opacity: 0;
-    transition: opacity 0.3s ease-in-out 0.3s; /* Aparece con retraso */
+    transition: opacity 0.3s ease-in-out 0.3s;
 }
 
 /* El checkmark se hace visible cuando el botón tiene la clase .clicked */
