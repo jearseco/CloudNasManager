@@ -10,31 +10,54 @@
     <div class="container">
         <img src="assets/app-logo.png" alt="Logo de Cloud NAS Manager" class="app-page-logo">
         <h1>Cloud NAS Manager</h1>
-        <p>Tu solución intuitiva para la gestión de archivos en la nube. Explora sus características a continuación.</p>
-        <div class="carousel">
-            <div class="carousel-viewport">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="assets/captdura1.png" alt="Captura de pantalla 1 de Cloud NAS Manager">
+        <p>Tu solución intuitiva para la gestión de archivos en la nube.</p>
+
+        <div class="grid-container">
+
+            <div class="info-card">
+                <h2>Capturas</h2>
+                <div class="carousel">
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/captura1.png" alt="Captura de pantalla 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/captura2.png" alt="Captura de pantalla 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <video src="assets/video1.mp4" controls muted loop playsinline></video>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="assets/capdtura2.png" alt="Captura de pantalla 2 de Cloud NAS Manager">
-                    </div>
-                    <div class="carousel-slide">
-                        <video src="assets/video1.mp4" controls muted loop playsinline></video>
-                    </div>
+                    <button class="carousel-button prev">&lt;</button>
+                    <button class="carousel-button next">&gt;</button>
                 </div>
             </div>
-            <button class="carousel-button prev">&lt;</button>
-            <button class="carousel-button next">&gt;</button>
+
+            <div class="info-card">
+                <h2>Requisitos del Sistema</h2>
+                <ul class="requirements-list">
+                    <li><strong>Sistema Operativo:</strong> Windows 10 o superior (64-bit)</li>
+                    <li><strong>Procesador:</strong> 1 GHz o más rápido</li>
+                    <li><strong>Memoria RAM:</strong> 2 GB mínimo</li>
+                    <li><strong>Espacio en Disco:</strong> 150 MB de espacio libre</li>
+                    <li><strong>Red:</strong> Conexión a internet estable</li>
+                </ul>
+            </div>
+
         </div>
 
-        <a href="https://github.com/nrcoriginalsco/CloudNasManager/releases/latest/download/CloudNasManagerLastversion.exe" class="download-button" id="downloadBtn">
-            <span class="button-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </span>
-            <span class="button-text">Descargar</span>
-        </a>
+        <div class="info-card download-card">
+            <h2>Descargar</h2>
+            <p>Obtén la última versión de Cloud NAS Manager.</p>
+            <a href="https://github.com/nrcoriginalsco/CloudNasManager/releases/latest/download/CloudNasManagerLastversion.exe" class="download-button" id="downloadBtn">
+                <span class="button-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </span>
+                <span class="button-text">Descargar Ahora</span>
+            </a>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
